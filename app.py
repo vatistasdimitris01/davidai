@@ -18,6 +18,7 @@ def send():
     reply = tokenizer.decode(outputs[0], skip_special_tokens=True)
     return jsonify({'reply': reply})
 
+# The 'app' instance is exposed for gunicorn to use
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
